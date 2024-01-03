@@ -13,7 +13,7 @@ public class Main {
             System.out.println("Welcome to the FlipFitApp");
             System.out.println("Enter the choice:");
             System.out.println("1.) Login");
-            System.out.println("2.) Registration of the Customer (SignUp)");
+            System.out.println("2.) Registration of the Admin/Customer/GymOwner");
             System.out.println("3.) Update Password");
             System.out.println("4.) Exit");
 
@@ -124,8 +124,28 @@ public class Main {
         System.out.println("Enter Password:");
         String password = scanner.next();
 
-        System.out.println("Enter Role (Customer, Admin, GymOwner):");
-        String role = scanner.next().toLowerCase();
+        System.out.println("Select Role:");
+        System.out.println("1. Admin");
+        System.out.println("2. Customer");
+        System.out.println("3. GymOwner");
+
+        int roleChoice = scanner.nextInt();
+        String role;
+
+        switch (roleChoice) {
+            case 1:
+                role = "admin";
+                break;
+            case 2:
+                role = "customer";
+                break;
+            case 3:
+                role = "gymowner";
+                break;
+            default:
+                System.out.println("Invalid role choice. Defaulting to Customer.");
+                role = "customer";
+        }
 
         Map<String, String> credentials = new HashMap<>();
         credentials.put("password", password);
@@ -135,6 +155,7 @@ public class Main {
 
         System.out.println("Registration successful!");
     }
+
 
     private static void updatePasswordMenu() {
         int updatePasswordChoice;
