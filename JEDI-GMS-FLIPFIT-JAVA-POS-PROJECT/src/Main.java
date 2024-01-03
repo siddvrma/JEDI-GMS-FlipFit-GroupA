@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static Map<String, String> userCredentials = new HashMap<>();
+    private static Map<String, Map<String, String>> userCredentials = new HashMap<>();
 
     public static void main(String[] args) {
         int mainChoice;
@@ -70,12 +70,20 @@ public class Main {
         System.out.println("Enter the Password:");
         String password = scanner.next();
 
-        if (userCredentials.containsKey(userName) && userCredentials.get(userName).equals(password)) {
-            System.out.println("Login successful!");
+        if (userCredentials.containsKey(userName)) {
+            Map<String, String> credentials = userCredentials.get(userName);
+            if (credentials.containsKey("password") && credentials.get("password").equals(password)) {
+                System.out.println("Login successful!");
+                String role = credentials.get("role");
+                System.out.println("Role: " + role);
+            } else {
+                System.out.println("Login failed. Invalid password.");
+            }
         } else {
-            System.out.println("Login failed. Invalid credentials.");
+            System.out.println("Login failed. User not found.");
         }
     }
+
 
     private static void registrationMenu() {
         int registrationChoice;
@@ -116,7 +124,15 @@ public class Main {
         System.out.println("Enter Password:");
         String password = scanner.next();
 
-        userCredentials.put(userName, password);
+        System.out.println("Enter Role (Customer, Admin, GymOwner):");
+        String role = scanner.next().toLowerCase();
+
+        Map<String, String> credentials = new HashMap<>();
+        credentials.put("password", password);
+        credentials.put("role", role);
+
+        userCredentials.put(userName, credentials);
+
         System.out.println("Registration successful!");
     }
 
@@ -151,13 +167,13 @@ public class Main {
             System.out.println("Enter Current Password:");
             String currentPassword = scanner.next();
 
-            String storedPassword = userCredentials.get(userName);
+            String storedPassword = userCredentials.get(userName).get("password");
 
             if (currentPassword.equals(storedPassword)) {
                 System.out.println("Enter New Password:");
                 String newPassword = scanner.next();
 
-                userCredentials.put(userName, newPassword);
+                userCredentials.get(userName).put("password", newPassword);
                 System.out.println("Password updated successfully!");
             } else {
                 System.out.println("Incorrect current password. Password update failed.");
