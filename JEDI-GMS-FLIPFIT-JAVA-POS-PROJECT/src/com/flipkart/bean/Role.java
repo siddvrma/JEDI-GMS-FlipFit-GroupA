@@ -1,4 +1,7 @@
 package com.flipkart.bean;
 
-public class Role {
+public enum Role {
+    GYM_OWNER,
+    CUSTOMER,
+    ADMIN
 }
