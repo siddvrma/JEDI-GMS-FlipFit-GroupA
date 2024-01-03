@@ -125,26 +125,26 @@ public class Main {
         String password = scanner.next();
 
         System.out.println("Select Role:");
-        System.out.println("1. Admin");
-        System.out.println("2. Customer");
-        System.out.println("3. GymOwner");
+        System.out.println("1. FlipFit Admin");
+        System.out.println("2. FlipFit Customer");
+        System.out.println("3. FlipFit GymOwner");
 
         int roleChoice = scanner.nextInt();
         String role;
 
         switch (roleChoice) {
             case 1:
-                role = "admin";
+                role = "FlipFit Admin";
                 break;
             case 2:
-                role = "customer";
+                role = "FlipFit Customer";
                 break;
             case 3:
-                role = "gymowner";
+                role = "FlipFit GymOwner";
                 break;
             default:
                 System.out.println("Invalid role choice. Defaulting to Customer.");
-                role = "customer";
+                role = "FlipFit Customer";
         }
 
         Map<String, String> credentials = new HashMap<>();
