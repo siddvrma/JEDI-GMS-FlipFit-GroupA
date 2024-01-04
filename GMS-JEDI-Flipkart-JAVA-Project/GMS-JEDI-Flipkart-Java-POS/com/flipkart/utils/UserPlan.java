@@ -4,6 +4,12 @@ import java.sql.Date;
 import java.time.LocalTime;
 
 public class UserPlan {
+
+    private String slotId;
+    private String centreID;
+    private LocalTime time;
+    private String scheduleID;
+    private Date date;
     public String getSlotId() {
         return slotId;
     }
@@ -40,17 +46,9 @@ public class UserPlan {
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
-
-    private String slotId;
-    private String centreID;
-    private LocalTime time;
-    private String scheduleID;
-    private Date date;
-
     public UserPlan(String slotId,String centreID,LocalTime time,String scheduleID,Date date){
         this.time = time;
         this.slotId = slotId;
