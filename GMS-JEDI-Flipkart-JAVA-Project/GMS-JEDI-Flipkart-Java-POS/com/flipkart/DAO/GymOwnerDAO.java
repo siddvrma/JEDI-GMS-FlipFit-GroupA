@@ -34,6 +34,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
 
         // Set the generated ID to the GymOwner object
         gymOwner.setUserID(gymOwnerId);
+        gymOwner.setApproved(2);
 
         // Add the GymOwner object to the list
         gymOwnerList.add(gymOwner);
@@ -53,7 +54,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
     public void sendOwnerApprovalRequest(String gymOwnerId) {
         for (GymOwner owner : gymOwnerList) {
             if (owner.getUserID().equals(gymOwnerId)) {
-                owner.setApproved(1);
+                owner.setApproved(2);
                 break;
             }
         }

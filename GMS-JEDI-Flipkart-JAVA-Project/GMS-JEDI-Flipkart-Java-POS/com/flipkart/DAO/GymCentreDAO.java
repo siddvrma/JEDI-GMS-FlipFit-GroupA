@@ -63,7 +63,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
             if (gymCentre.getGymCentreID().equals(gymCentreId)) {
                 gymCentre.setApproved(2);
                 System.out.println("Sending gym centre approval request for ID: " + gymCentreId);
-                break; // Stop the loop once GymCentre is found
+                break;
             }
         }
     }

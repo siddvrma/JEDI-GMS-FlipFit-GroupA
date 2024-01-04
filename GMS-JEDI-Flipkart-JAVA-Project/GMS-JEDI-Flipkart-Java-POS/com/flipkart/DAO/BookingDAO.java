@@ -95,7 +95,6 @@ public class BookingDAO implements BookingInterfaceDAO {
     }
 
     private String generateUniqueBookingId(String userName, String scheduleID) {
-        // Add logic to generate a unique booking ID
         return userName + scheduleID;
     }
 }
