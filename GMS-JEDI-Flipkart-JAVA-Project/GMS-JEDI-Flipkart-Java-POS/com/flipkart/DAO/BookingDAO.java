@@ -9,8 +9,8 @@ import java.util.*;
 
 public class BookingDAO implements BookingInterfaceDAO {
 
-    private List<Booking> allBookingList = new ArrayList<>();
-    private Map<String, List<String>> bookingDetails = new HashMap<>();
+    private static List<Booking> allBookingList = new ArrayList<>();
+    private static Map<String, List<String>> bookingDetails = new HashMap<>();
 
     ScheduleDAO scheduleDAO = new ScheduleDAO();
 

@@ -167,11 +167,10 @@ public class CustomerClient {
     }
 
     private void cancelBookingSubMenu(String userName){
-        System.out.println("Select the Booking you want to cancel: ");
         printbookingsSubMenu(userName);
+        System.out.println("Select the Booking you want to cancel: ");
         String bookingId = scanner.next();
         customerService.cancelBookingbyID(bookingId);
-
     }
 
     public void printCustomerProfile(Customer customer){
@@ -202,7 +201,8 @@ public class CustomerClient {
                     bookSlotSubMenu(userName);
                     break;
                 case 3:
-                    printUserPlan(userName);
+                    printbookingsSubMenu(userName);
+                    //printUserPlan(userName);
                     break;
                 case 4:
                     cancelBookingSubMenu(userName);

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GymCentreDAO implements GymCentreInterfaceDAO {
 
-    private List<GymCentre> allGymCentres = new ArrayList<>();
+    private static List<GymCentre> allGymCentres = new ArrayList<>();
 
     public List<GymCentre> getAllCentresByOwmerId(String ownerId) {
         List<GymCentre> ownerGymCentres = new ArrayList<>();

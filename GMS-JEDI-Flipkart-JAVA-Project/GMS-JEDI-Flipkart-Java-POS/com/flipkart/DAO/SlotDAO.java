@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SlotDAO implements SlotInterfaceDAO {
 
-    private List<Slot> slotList = new ArrayList<>();
+    private static List<Slot> slotList = new ArrayList<>();
 
     public SlotDAO() {
     }

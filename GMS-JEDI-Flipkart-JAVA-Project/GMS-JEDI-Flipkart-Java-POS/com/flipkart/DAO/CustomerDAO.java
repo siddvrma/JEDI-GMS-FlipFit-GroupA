@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CustomerDAO implements CustomerInterfaceDAO {
 
-    private List<Customer> allCustomers = new ArrayList<>();
+    private static List<Customer> allCustomers = new ArrayList<>();
 
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) throws RegistrationFailedException {
         try {

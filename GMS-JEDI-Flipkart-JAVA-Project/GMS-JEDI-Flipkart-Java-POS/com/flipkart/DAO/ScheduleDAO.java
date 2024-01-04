@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ScheduleDAO implements ScheduleInterfaceDAO {
 
-    private List<Schedule> scheduleList = new ArrayList<>();
+    private static List<Schedule> scheduleList = new ArrayList<>();
 
     public void addSchedule(Schedule schedule) {
         // Assuming you have a method to generate a unique Schedule ID
@@ -46,12 +46,10 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
         if (schedule == null) {
             return false;
         }
-
         int availability = schedule.getAvailability();
         if (availability < 1 && action == -1) {
             return false;
         }
-
         // Update the availability
         schedule.setAvailability(availability + action);
         return true;
