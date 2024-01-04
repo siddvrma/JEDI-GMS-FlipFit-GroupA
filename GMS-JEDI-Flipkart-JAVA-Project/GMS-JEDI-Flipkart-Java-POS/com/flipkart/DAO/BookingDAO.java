@@ -54,7 +54,19 @@ public class BookingDAO implements BookingInterfaceDAO {
     }
 
     public boolean checkBookingOverlap(String customerId, Date date, LocalTime localTime) {
-        // Add logic to check booking overlap based on local data structures
+        LocalTime endTime = localTime.plusHours(1);
+
+        List<UserPlan> allUserPlan = getCustomerPlan(customerId);
+        for(UserPlan userPlan:allUserPlan){
+
+            if(userPlan.getDate().equals(date)){
+                if(localTime.compareTo(userPlan.getTime())<=0  && endTime.compareTo(userPlan.getTime())>=0){
+                    return true;
+                }
+                else if(userPlan.getTime().compareTo(localTime)<=0  && userPlan.getTime().compareTo(endTime)>=0)
+                    return true;
+            }
+        }
         return false;
     }
 
