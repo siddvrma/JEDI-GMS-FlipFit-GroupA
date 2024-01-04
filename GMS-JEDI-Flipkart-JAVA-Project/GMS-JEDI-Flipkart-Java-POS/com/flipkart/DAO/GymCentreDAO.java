@@ -59,9 +59,13 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
     }
 
     public void sendCentreApprovalRequest(String gymCentreId) {
-        // Assuming you have a method to send approval requests
-        // This method could trigger notifications or other actions
-        // depending on your system design.
+        for (GymCentre gymCentre : allGymCentres) {
+            if (gymCentre.getGymCentreID().equals(gymCentreId)) {
+                gymCentre.setApproved(2);
+                System.out.println("Sending gym centre approval request for ID: " + gymCentreId);
+                break; // Stop the loop once GymCentre is found
+            }
+        }
     }
 
     public List<GymCentre> getGymCentreListByCity(String city) {

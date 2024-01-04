@@ -18,7 +18,6 @@ public class BookingDAO implements BookingInterfaceDAO {
         try {
             // Assuming you have a method to generate a unique booking ID
             String bookingId = generateUniqueBookingId(userName, scheduleID);
-
             // Create a Booking object
             Booking booking = new Booking(bookingId, userName, scheduleID);
 

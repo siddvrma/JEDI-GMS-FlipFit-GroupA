@@ -53,9 +53,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
     public void sendOwnerApprovalRequest(String gymOwnerId) {
         for (GymOwner owner : gymOwnerList) {
             if (owner.getUserID().equals(gymOwnerId)) {
-                // Assuming you have a method to send approval requests
-                // This method could trigger notifications or other actions
-                // depending on your system design.
                 owner.setApproved(1);
                 break;
             }
