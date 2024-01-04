@@ -81,7 +81,7 @@ public class CustomerClient {
         //Select Gym Centre
         if(centreListByLocation.isEmpty()){
             System.out.println(RED_COLOR +"There are no available GYM Centres in " + location + ". Please Select some other location" + RESET_COLOR);
-            bookSlotSubMenu(userName);
+            customerClientMainPage(userName);
             return;
         }
         System.out.print("Choose a gymCentre ID to proceed:");
