@@ -105,7 +105,7 @@ public class GymOwnerClient {
                     System.out.println("Enter Gym Centre capacity: ");
                     int capacity = scanner.nextInt();
 
-                    System.out.println("Enter price: : ");
+                    System.out.println("Enter price: ");
                     int price = scanner.nextInt();
 
                     gymCentreService.addCenter(

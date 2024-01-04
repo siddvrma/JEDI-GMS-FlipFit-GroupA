@@ -9,6 +9,7 @@ public class GymOwnerService implements GymOwnerServiceInterface {
     private static GymOwnerDAO gymOwnerDAO = new GymOwnerDAO();
     public void requestGymOwnerApproval(String gymOwnerId) {
         gymOwnerDAO.sendOwnerApprovalRequest(gymOwnerId);
+
     }
 
     public List<GymOwner> viewAllGymOwners() {

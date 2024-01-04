@@ -57,6 +57,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
                 break;
             }
         }
+        System.out.println("Approval Request sent to Admin");
     }
 
     public void setPendingGymOwnerList() {

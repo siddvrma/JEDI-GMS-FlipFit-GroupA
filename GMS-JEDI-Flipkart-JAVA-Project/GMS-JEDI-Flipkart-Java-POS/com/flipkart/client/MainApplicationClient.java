@@ -37,13 +37,13 @@ public class MainApplicationClient {
 
     private static void login(){
         try {
-            System.out.println("Enter your Role");
+            System.out.println("Enter your Role (ADMIN/GYMOWNER/CUSTOMER) : ");
             Role role = Role.valueOf(scanner.next().toUpperCase());
 
-            System.out.println("Enter your UserName");
+            System.out.println("Enter your UserName : ");
             String userName = scanner.next();
 
-            System.out.println("Enter your Passkey");
+            System.out.println("Enter your Passkey :");
             String password = scanner.next();
 
             switch (role){
@@ -67,7 +67,7 @@ public class MainApplicationClient {
     
     private static void registration(){
         try {
-            System.out.println("Enter your role");
+            System.out.println("Enter your role (ADMIN/GYMOWNER/CUSTOMER) : ");
             Role role = Role.valueOf(scanner.next().toUpperCase());
 
             switch (role){

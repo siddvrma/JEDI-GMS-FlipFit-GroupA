@@ -90,6 +90,7 @@ public class CustomerClient {
         Date sqlDate = selectDate();
         //Choose Slot
         chooseSlot(chosenGym,userName,sqlDate,chosenGym);
+        System.out.println("Booking Successful");
     }
 
     private Date selectDate(){
@@ -125,7 +126,7 @@ public class CustomerClient {
             customerClientMainPage(userName);
             return;
         }
-        System.out.println("Enter SlotID");
+        System.out.println("Enter SlotID :");
         String slotID = scanner.next();
         //Select Slot to book
         if(!customerService.bookSlot(userName,sqlDate,slotID,centreId)) chooseSlot(gymCentreId, userName, sqlDate,centreId);
@@ -171,6 +172,7 @@ public class CustomerClient {
         System.out.println("Select the Booking you want to cancel: ");
         String bookingId = scanner.next();
         customerService.cancelBookingbyID(bookingId);
+        System.out.println("Booking Cancellation Successful");
     }
 
     public void printCustomerProfile(Customer customer){
