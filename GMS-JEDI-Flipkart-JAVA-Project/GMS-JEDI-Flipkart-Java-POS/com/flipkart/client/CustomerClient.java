@@ -122,7 +122,7 @@ public class CustomerClient {
         printSlots(availableSlots);
         if(availableSlots.isEmpty()){
             System.out.println(RED_COLOR +"There are no available slots in the " + gymCentreId + ". Please Select some other gym" + RESET_COLOR);
-            bookSlotSubMenu(userName);
+            customerClientMainPage(userName);
             return;
         }
         System.out.println("Enter SlotID");

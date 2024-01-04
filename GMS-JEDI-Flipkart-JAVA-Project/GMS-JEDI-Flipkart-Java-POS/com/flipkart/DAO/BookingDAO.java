@@ -55,7 +55,7 @@ public class BookingDAO implements BookingInterfaceDAO {
 
     public boolean checkBookingOverlap(String customerId, Date date, LocalTime localTime) {
         // Add logic to check booking overlap based on local data structures
-        return true;
+        return false;
     }
 
     public void cancelBookingById(String bookingID) throws BookingFailedException {
