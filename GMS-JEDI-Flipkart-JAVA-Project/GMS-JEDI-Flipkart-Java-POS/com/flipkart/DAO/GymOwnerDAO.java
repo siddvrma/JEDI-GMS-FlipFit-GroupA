@@ -29,7 +29,8 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
 
     public void registerGymOwner(GymOwner gymOwner) {
         // Assuming you have a method to generate a unique GymOwner ID
-        String gymOwnerId = generateUniqueGymOwnerId(gymOwner.getUserName());
+        //String gymOwnerId = generateUniqueGymOwnerId(gymOwner.getUserName());
+        String gymOwnerId = gymOwner.getUserID();
 
         // Set the generated ID to the GymOwner object
         gymOwner.setUserID(gymOwnerId);

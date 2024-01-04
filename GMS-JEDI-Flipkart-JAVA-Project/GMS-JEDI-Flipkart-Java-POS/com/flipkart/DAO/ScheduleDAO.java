@@ -12,8 +12,8 @@ public class ScheduleDAO implements ScheduleInterfaceDAO {
 
     public void addSchedule(Schedule schedule) {
         // Assuming you have a method to generate a unique Schedule ID
-        String scheduleId = generateUniqueScheduleId(schedule.getDate(), schedule.getSlotID());
-
+        //String scheduleId = generateUniqueScheduleId(schedule.getDate(), schedule.getSlotID());
+        String scheduleId = schedule.getScheduleID();
         // Set the generated ID to the Schedule object
         schedule.setScheduleID(scheduleId);
 

@@ -30,8 +30,8 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
 
     public void addGymCentre(GymCentre centre) {
         // Assuming you have a method to generate a unique gym centre ID
-        String gymCentreId = generateUniqueGymCentreId(centre.getGymCenterName());
-
+        //String gymCentreId = generateUniqueGymCentreId(centre.getGymCenterName());
+        String gymCentreId = centre.getGymCentreID();
         // Set the generated ID to the GymCentre object
         centre.setGymCentreID(gymCentreId);
 
