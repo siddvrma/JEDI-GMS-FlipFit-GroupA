@@ -69,7 +69,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
             gymCentre.setCapacity(rs.getInt("capacity"));
             gymCentre.setPrice(rs.getInt("price"));
             gymCentre.setApproved(rs.getInt("isApproved"));
-            //stmt.close();
+            stmt.close();
         } catch (SQLException exp) {
             exp.printStackTrace();
         }

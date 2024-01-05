@@ -32,7 +32,7 @@ public class BookingDAO {
             stmt.setString(2, userName);
             stmt.setString(3, scheduleID);
             stmt.executeUpdate();
-            //stmt.close();
+            stmt.close();
         } catch (SQLException exp) {
             throw new BookingFailedException("Booking failed for current slot. Try again later.");
         } catch (Exception exp) {

@@ -26,7 +26,7 @@ public class CustomerDAO implements CustomerInterfaceDAO {
             stmt.setString(6, cardNumber);
 
             stmt.executeUpdate();
-            //stmt.close();
+            stmt.close();
         } catch (SQLException exp) {
             throw new RegistrationFailedException("Failed to register the user. Try again.");
         } catch (Exception e) {
@@ -42,10 +42,10 @@ public class CustomerDAO implements CustomerInterfaceDAO {
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()){
-                //stmt.close();
+                stmt.close();
                 return true;
             }
-            //stmt.close();
+            stmt.close();
         } catch (SQLException exp) {
             throw new UserInvalidException("User is Invalid. Try again.");
         } catch (Exception exp) {
@@ -69,7 +69,7 @@ public class CustomerDAO implements CustomerInterfaceDAO {
             customer.setCustomerPhone(rs.getString("phone"));
             customer.setCardDetails(rs.getString("cardDetails"));
 
-            //stmt.close();
+            stmt.close();
         } catch (SQLException exp) {
             exp.printStackTrace();
         } catch (Exception exp) {
