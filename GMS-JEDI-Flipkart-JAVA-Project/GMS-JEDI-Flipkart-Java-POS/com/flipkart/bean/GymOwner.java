@@ -15,6 +15,11 @@ public class GymOwner extends User {
         this.isApproved = 0;
     }
 
+    public GymOwner(String userId, String userName, String email, String password, int approved){
+        super(userId,userName, email, password, Role.GYMOWNER);
+        this.isApproved=approved;
+    }
+
     public String getPanNumber() {
         return panNumber;
     }

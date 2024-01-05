@@ -18,7 +18,24 @@ public class GymCentre {
 
     }
 
+    public GymCentre(String gymCentreID, String ownerID, String gymCenterName, String gstin, String city, int capacity, int price, int isApproved) {
+        this.gymCentreID=gymCentreID;
+        this.ownerID=ownerID;
+        this.gymCenterName=gymCenterName;
+        this.gstin=gstin;
+        this.city=city;
+        this.capacity=capacity;
+        this.price=price;
+        this.isApproved=isApproved;
+    }
 
+    public GymCentre(String gymCentreID, String ownerID, String gymCenterName, String city, int approved) {
+        this.gymCentreID = gymCentreID;
+        this.ownerID = ownerID;
+        this.gymCenterName = gymCenterName;
+        this.city = city;
+        this.isApproved = approved;
+    }
     @Override
     public String toString() {
         return "GymCentre{" +

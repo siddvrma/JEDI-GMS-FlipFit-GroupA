@@ -1,4 +1,4 @@
-package com.flipkart.DAO2;
+package com.flipkart.DAO;
 
 import com.flipkart.DAO.GymOwnerInterfaceDAO;
 import com.flipkart.bean.GymOwner;
@@ -87,8 +87,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
             preparedStatement.setString(2, gymOwner.getUserName());
             preparedStatement.setString(3, gymOwner.getPassword());
             preparedStatement.setString(4, gymOwner.getEmail());
-            preparedStatement.setString(5, gymOwner.getPhoneNumber());
-            preparedStatement.setInt(6, gymOwner.isApproved());
+            preparedStatement.setInt(5, gymOwner.isApproved());
 
             preparedStatement.executeUpdate();
 
@@ -129,7 +128,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
     private void updateGymOwnerApprovalStatus(String gymOwnerId, int isApproved) {
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "UPDATE GymOwner SET approved = ? WHERE userID = ?")) {
+                     "UPDATE GymOwner SET isApproved = ? WHERE userID = ?")) {
 
             preparedStatement.setInt(1, isApproved);
             preparedStatement.setString(2, gymOwnerId);
@@ -138,12 +137,10 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exception appropriately, maybe throw a custom exception
         }
     }
 
     private String generateUniqueGymOwnerId(String userName) {
-        // Implement logic to generate a unique GymOwner ID based on your requirements
         return userName + System.currentTimeMillis();
     }
 }

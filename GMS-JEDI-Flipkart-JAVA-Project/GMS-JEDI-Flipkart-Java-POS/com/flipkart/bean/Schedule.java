@@ -17,6 +17,13 @@ public class Schedule {
         this.availability = availability;
     }
 
+    public Schedule(String scheduleID, Date date, String slotID, int availability) {
+        this.scheduleID = scheduleID;
+        this.date = date;
+        this.slotID = slotID;
+        this.availability = availability;
+    }
+
     public String getScheduleID() {
         return scheduleID;
     }

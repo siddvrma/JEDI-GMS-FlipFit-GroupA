@@ -6,7 +6,6 @@ import com.flipkart.bean.Slot;
 import com.flipkart.exceptions.BookingFailedException;
 import com.flipkart.utils.UserPlan;
 
-import java.awt.print.Book;
 import java.util.Date;
 import java.util.List;
 

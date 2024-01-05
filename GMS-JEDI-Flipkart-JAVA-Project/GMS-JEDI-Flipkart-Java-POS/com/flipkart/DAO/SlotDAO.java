@@ -1,6 +1,5 @@
-package com.flipkart.DAO2;
+package com.flipkart.DAO;
 
-import com.flipkart.DAO.SlotInterfaceDAO;
 import com.flipkart.bean.Slot;
 import com.flipkart.connection.DBConnection;
 

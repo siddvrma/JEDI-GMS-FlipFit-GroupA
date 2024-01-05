@@ -1,4 +1,4 @@
-package com.flipkart.DAO2;
+package com.flipkart.DAO;
 
 import com.flipkart.DAO.ScheduleInterfaceDAO;
 import com.flipkart.bean.Schedule;
