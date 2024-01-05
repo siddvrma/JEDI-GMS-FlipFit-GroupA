@@ -6,7 +6,7 @@ public class DBConnection {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/FlipFit";
     static final String USER = "root";
-    static final String PASS = "Rangi@2018";
+    static final String PASS = "Password";
     private static Connection singleInstance = null;
 
     static {
