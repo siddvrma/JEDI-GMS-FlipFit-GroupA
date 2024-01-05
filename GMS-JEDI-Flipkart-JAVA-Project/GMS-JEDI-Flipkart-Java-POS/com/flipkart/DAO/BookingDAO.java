@@ -28,12 +28,14 @@ public class BookingDAO {
             //System.out.println(userName + scheduleID);
             Connection conn = DBConnection.connect();
             PreparedStatement stmt = conn.prepareStatement(ADD_BOOKING);
-            stmt.setString(1, userName+scheduleID);
+            String trimmedBookingId = (userName + scheduleID).substring(0, 36);
+            stmt.setString(1, trimmedBookingId);
             stmt.setString(2, userName);
             stmt.setString(3, scheduleID);
             stmt.executeUpdate();
             stmt.close();
         } catch (SQLException exp) {
+            exp.printStackTrace();
             throw new BookingFailedException("Booking failed for current slot. Try again later.");
         } catch (Exception exp) {
             System.out.println("Oops! An error occurred. Try again later.");

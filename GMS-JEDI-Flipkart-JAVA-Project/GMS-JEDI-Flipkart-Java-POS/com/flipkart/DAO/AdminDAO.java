@@ -8,7 +8,6 @@ public class AdminDAO implements AdminInterfaceDAO {
     private static GymOwnerInterfaceDAO gymOwnerDAO = new GymOwnerDAO();
     private static GymCentreInterfaceDAO gymCentreDAO = new GymCentreDAO();
 
-
     public List<GymOwner> getPendingGymOwners() {
         return gymOwnerDAO.getPendingGymOwnerList();
     }
@@ -24,8 +23,5 @@ public class AdminDAO implements AdminInterfaceDAO {
     public List<GymCentre> getPendingGymCentres() {
         return gymCentreDAO.getPendingGymCentreList();
     }
-
-
-
 
 }
