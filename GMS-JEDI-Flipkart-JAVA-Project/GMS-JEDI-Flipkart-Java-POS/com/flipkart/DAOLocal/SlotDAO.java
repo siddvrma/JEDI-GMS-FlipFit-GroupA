@@ -28,14 +28,9 @@ public class SlotDAO implements SlotInterfaceDAO {
     }
 
     public void addSlot(Slot slot) {
-        // Assuming you have a method to generate a unique Slot ID
         //String slotId = generateUniqueSlotId(slot.getCentreID(), slot.getTime());
         String slotId= slot.getSlotId();
-
-        // Set the generated ID to the Slot object
         slot.setSlotId(slotId);
-
-        // Add the Slot object to the list
         slotList.add(slot);
     }
 

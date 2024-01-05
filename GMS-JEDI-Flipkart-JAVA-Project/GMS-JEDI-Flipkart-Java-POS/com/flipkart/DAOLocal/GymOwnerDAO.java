@@ -28,15 +28,10 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
     }
 
     public void registerGymOwner(GymOwner gymOwner) {
-        // Assuming you have a method to generate a unique GymOwner ID
         //String gymOwnerId = generateUniqueGymOwnerId(gymOwner.getUserName());
         String gymOwnerId = gymOwner.getUserID();
-
-        // Set the generated ID to the GymOwner object
         gymOwner.setUserID(gymOwnerId);
         gymOwner.setApproved(2);
-
-        // Add the GymOwner object to the list
         gymOwnerList.add(gymOwner);
         System.out.println("Registration Success\n");
     }
@@ -75,7 +70,6 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
     }
 
     private String generateUniqueGymOwnerId(String userName) {
-        // Implement logic to generate a unique GymOwner ID based on your requirements
         return userName + System.currentTimeMillis();
     }
 }

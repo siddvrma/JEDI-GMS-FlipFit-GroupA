@@ -14,7 +14,6 @@ public class UserPlan {
         return slotId;
     }
 
-
     public void setSlotId(String slotId) {
         this.slotId = slotId;
     }

@@ -5,7 +5,6 @@ import com.flipkart.bean.GymCentre;
 import java.util.List;
 
 public interface GymCentreInterfaceDAO {
-
     List<GymCentre> getAllCentresByOwmerId(String gymOwnerId);
     GymCentre getGymCentreByCentreId(String gymCentreId);
     void addGymCentre(GymCentre centre);

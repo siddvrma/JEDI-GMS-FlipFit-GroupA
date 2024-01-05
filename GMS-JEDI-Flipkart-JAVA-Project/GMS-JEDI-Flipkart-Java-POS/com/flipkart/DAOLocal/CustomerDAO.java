@@ -13,13 +13,8 @@ public class CustomerDAO implements CustomerInterfaceDAO {
 
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) throws RegistrationFailedException {
         try {
-            // Assuming you have a method to generate a unique customer ID
             String customerId = generateUniqueCustomerId(userName);
-
-            // Create a Customer object
             Customer customer = new Customer(customerId, userName, password, email, phoneNumber, cardNumber);
-
-            // Add the Customer object to the list
             allCustomers.add(customer);
         } catch (Exception e) {
             throw new RegistrationFailedException("Failed to register the user. Try again.");
@@ -41,11 +36,10 @@ public class CustomerDAO implements CustomerInterfaceDAO {
                 return customer;
             }
         }
-        return null; // or throw an exception if not found
+        return null;
     }
 
     private String generateUniqueCustomerId(String userName) {
-        // Implement logic to generate a unique customer ID based on your requirements
         return userName + System.currentTimeMillis();
     }
 }

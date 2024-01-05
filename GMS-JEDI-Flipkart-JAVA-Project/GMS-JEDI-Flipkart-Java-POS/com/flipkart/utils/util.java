@@ -14,7 +14,6 @@ public class util {
             System.out.println(element);
         }
     }
-
     public static void printGymCentres(List<GymCentre> gymCentres){
         System.out.println(DASHED_LINE);
         System.out.printf(YELLOW_COLOR + "%-8s\t", "CENTRE-ID");
