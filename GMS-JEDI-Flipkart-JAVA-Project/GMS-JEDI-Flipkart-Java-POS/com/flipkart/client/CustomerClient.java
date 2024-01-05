@@ -48,12 +48,24 @@ public class CustomerClient {
 
         System.out.println("Enter your Email");
         String email = scanner.next();
+        if(!Validators.isEmailValid(email)){
+            System.out.println("Invalid email, Please reenter your email!!!");
+            System.out.println("Enter your email");
+        }
 
-        System.out.println("Enter your Phone Number");
+        System.out.println("Enter your Phone Number (10 Digits)");
         String phoneNumber = scanner.next();
+        if(!Validators.isPhoneValid(phoneNumber)){
+            System.out.println("Invalid Phone Number, Please reenter your Phone Number!!!");
+            System.out.println("Enter your Phone Number (10 Digits)");
+        }
 
-        System.out.println("Enter your Card Number");
+        System.out.println("Enter your Card Number (12 Digits)");
         String cardNumber = scanner.next();
+        if(!Validators.isCardValid(cardNumber)){
+            System.out.println("Invalid Card Number, Please reenter your Card Details!!!");
+            System.out.println("Enter your Card Number (12 Digits)");
+        }
 
         customerService.registerCustomer(userName,password,email,phoneNumber,cardNumber);
         customerClientMainPage(userName);

@@ -37,26 +37,30 @@ public class Validators {
     }
 
 
-    public boolean isTimeValid(String time) {
+    public static boolean isTimeValid(String time) {
         String regex = "/^(?:[01]\\d|2[0123]):(?:[012345]\\d):(?:[012345]\\d)$/gm";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
         return matcher.matches();
     }
 
-    public boolean isEmailValid(String email) {
+    public static boolean isEmailValid(String email) {
         String regex = "^(.+)@(.+)$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
 
-    public boolean isPhoneValid(String phone) {
+    public static boolean isPhoneValid(String phone) {
         if(phone.length() != 10) return false;
         String regex = "(0|91)?[6-9][0-9]{9}";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phone);
         return matcher.matches();
+    }
+
+    public static boolean isCardValid(String cardNumber){
+        return (cardNumber.length()==12);
     }
 
 }
