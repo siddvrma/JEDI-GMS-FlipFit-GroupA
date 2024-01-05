@@ -1,144 +1,212 @@
 package com.flipkart.DAO;
 
-import com.flipkart.DAO.GymCentreInterfaceDAO;
 import com.flipkart.bean.GymCentre;
-import com.flipkart.connection.DBConnection;
+import com.flipkart.constant.SQLConstants;
+import com.flipkart.utils.DBConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.flipkart.constant.SQLConstants.FETCH_GYM_CENTRE_BY_ID;
+
 public class GymCentreDAO implements GymCentreInterfaceDAO {
-    private static final String INSERT_GYM_CENTRE = "INSERT INTO GymCentre (gymCentreID, ownerID, city, approved) VALUES (?, ?, ?, ?)";
-    private static final String SELECT_ALL_GYM_CENTRES_BY_OWNER = "SELECT * FROM GymCentre WHERE ownerID = ?";
-    private static final String SELECT_GYM_CENTRE_BY_ID = "SELECT * FROM GymCentre WHERE gymCentreID = ?";
-    private static final String UPDATE_GYM_CENTRE_APPROVAL = "UPDATE GymCentre SET approved = ? WHERE gymCentreID = ?";
-    private static final String SELECT_PENDING_GYM_CENTRES = "SELECT * FROM GymCentre WHERE approved = 2";
-    private static final String UPDATE_GYM_CENTRE_APPROVAL_REQUEST = "UPDATE GymCentre SET approved = 2 WHERE gymCentreID = ?";
-    private static final String SELECT_GYM_CENTRES_BY_CITY = "SELECT * FROM GymCentre WHERE city = ?";
+    private Connection conn = null;
+    private PreparedStatement statement = null;
 
-    private static List<GymCentre> allGymCentres = new ArrayList<>();
-
-    public List<GymCentre> getAllCentresByOwmerId(String ownerId) {
-        List<GymCentre> ownerGymCentres = new ArrayList<>();
-        for (GymCentre gymCentre : allGymCentres) {
-            if (gymCentre.getOwnerID().equals(ownerId)) {
-                ownerGymCentres.add(gymCentre);
-            }
-        }
-        return ownerGymCentres;
+    public GymCentreDAO() {
     }
 
-    public GymCentre getGymCentreByCentreId(String gymCentreId) {
-        for (GymCentre gymCentre : allGymCentres) {
-            if (gymCentre.getGymCentreID().equals(gymCentreId)) {
-                return gymCentre;
+    // api call to retrieve all gym centres and status
+    public List<GymCentre> getAllCentresByOwmerId(String gymOwnerId)  {
+
+        List<GymCentre> allGymCentres = new ArrayList<>();
+        try {
+            conn = DBConnection.connect();
+            statement = conn.prepareStatement(SQLConstants.FETCH_GYM_CENTRES_BY_OWNER_ID);
+            statement.setString(1, gymOwnerId);
+
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()) {
+                GymCentre gymCentre = new GymCentre(
+                        rs.getString("centreId"),
+                        rs.getString("ownerId"),
+                        rs.getString("centreName"),
+                        rs.getString("gstin"),
+                        rs.getString("city"),
+                        rs.getInt("capacity"),
+                        rs.getInt("price")
+                );
+                gymCentre.setApproved(rs.getInt("isApproved"));
+                allGymCentres.add(gymCentre);
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return null; // or throw an exception if not found
+
+        return allGymCentres;
+    }
+
+
+
+    public GymCentre getGymCentreByCentreId(String gymCentreId){
+        GymCentre gymCentre = new GymCentre();
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(FETCH_GYM_CENTRE_BY_ID);
+            stmt.setString(1, gymCentreId);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            gymCentre.setGymCentreID(rs.getString("centreId"));
+            gymCentre.setOwnerID(rs.getString("ownerId"));
+            gymCentre.setGymCenterName(rs.getString("centreName"));
+            gymCentre.setGstin(rs.getString("gstin"));
+            gymCentre.setCity(rs.getString("city"));
+            gymCentre.setCapacity(rs.getInt("capacity"));
+            gymCentre.setPrice(rs.getInt("price"));
+            gymCentre.setApproved(rs.getInt("isApproved"));
+            //stmt.close();
+        } catch (SQLException exp) {
+            exp.printStackTrace();
+        }
+
+        return gymCentre;
+
     }
 
     public void addGymCentre(GymCentre centre) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_GYM_CENTRE)) {
+        // call to db api
+        try {
+            conn = DBConnection.connect();
+            System.out.println("Adding gym centre....");
 
-            // Assuming you have a method to generate a unique gym centre ID
-            String gymCentreId = generateUniqueGymCentreId(centre.getGymCenterName());
+            //    INSERT INTO FlipFit.GymCentre (centreId, ownerId, centreName, gstin, city, capacity, price, isApproved)
+            statement = conn.prepareStatement(SQLConstants.ADD_GYM_CENTRE_QUERY);
+            statement.setString(1,centre.getGymCentreID());
+            statement.setString(2,centre.getOwnerID());
+            statement.setString(3, centre.getGymCenterName());
+            statement.setString(4,centre.getGstin());
+            statement.setString(5, centre.getCity());
+            statement.setInt(6, centre.getCapacity());
+            statement.setInt(7, centre.getPrice());
+            statement.setInt(8, centre.isApproved());
 
-            preparedStatement.setString(1, gymCentreId);
-            preparedStatement.setString(2, centre.getOwnerID());
-            preparedStatement.setString(3, centre.getCity());
-            preparedStatement.setInt(4, centre.isApproved());
-
-            // Set the generated ID to the GymCentre object
-            centre.setGymCentreID(gymCentreId);
-
-            // Add the GymCentre object to the list
-            allGymCentres.add(centre);
-
-        } catch (SQLException e) {
-            // Handle exception or throw a specific exception
+            statement.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public List<GymCentre> getPendingGymCentreList() {
         List<GymCentre> pendingList = new ArrayList<>();
-        for (GymCentre gymCentre : allGymCentres) {
-            if (gymCentre.isApproved() == 2) {
+        try {
+            conn = DBConnection.connect();
+            System.out.println("Fetching gym centres..");
+
+            statement = conn.prepareStatement(SQLConstants.FETCH_ALL_PENDING_GYM_CENTRES_QUERY);
+
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()) {
+                GymCentre gymCentre = new GymCentre(
+                        rs.getString("centreId"),
+                        rs.getString("ownerId"),
+                        rs.getString("centreName"),
+                        rs.getString("gstin"),
+                        rs.getString("city"),
+                        rs.getInt("capacity"),
+                        rs.getInt("price")
+                );
+                gymCentre.setApproved(rs.getInt("isApproved"));
                 pendingList.add(gymCentre);
             }
+            //conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return pendingList;
     }
 
     public void validateGymCentre(String gymCentreId, int isApproved) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_GYM_CENTRE_APPROVAL)) {
+//        System.out.println("IN VALIDATE GYM CENTRE");
+        try {
+            conn = DBConnection.connect();
+            System.out.println("Fetching gyms centres..");
 
-            preparedStatement.setInt(1, isApproved);
-            preparedStatement.setString(2, gymCentreId);
-
-            preparedStatement.executeUpdate();
-
-            for (GymCentre gymCentre : allGymCentres) {
-                if (gymCentre.getGymCentreID().equals(gymCentreId)) {
-                    gymCentre.setApproved(isApproved);
-                    break;
-                }
-            }
-
-        } catch (SQLException e) {
-            // Handle exception or throw a specific exception
+            statement = conn.prepareStatement(SQLConstants.SQL_APPROVE_GYM_CENTRE_BY_ID_QUERY);
+            statement.setInt(1, isApproved);
+            statement.setString(2, gymCentreId);
+            statement.executeUpdate();
+//            System.out.println("The gym centre has been approved!");
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
         }
+//        for(GymCentre gymCentre : gymCentreList) {
+//            if(gymCentre.getGymCentreID().equals(gymCentreId)) {
+//                gymCentre.setApproved(isApproved);
+//            }
+//        }
+//        for(GymCentre gymCentre : pendingGymCentreList) {
+//            if(gymCentre.getGymCentreID().equals(gymCentreId)) {
+//                pendingGymCentreList.remove(gymCentre);
+//            }
+//        }
     }
 
-    public void sendCentreApprovalRequest(String gymCentreId) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_GYM_CENTRE_APPROVAL_REQUEST)) {
+    public void sendCentreApprovalRequest(String gymCentreId){
+        try {
+            conn = DBConnection.connect();
+            System.out.println("Sending gym centre approval request..");
+            // SQL_APPROVE_GYM_CENTRE_BY_ID_QUERY="Update GymCentre Set isApproved=? WHERE centreId=?";
+            statement = conn.prepareStatement(SQLConstants.SQL_APPROVE_GYM_CENTRE_BY_ID_QUERY);
+            statement.setInt(1,2);
+            statement.setString(2, gymCentreId);
+            statement.executeUpdate();
 
-            preparedStatement.setString(1, gymCentreId);
-            preparedStatement.executeUpdate();
-
-            for (GymCentre gymCentre : allGymCentres) {
-                if (gymCentre.getGymCentreID().equals(gymCentreId)) {
-                    gymCentre.setApproved(2);
-                    System.out.println("Sending gym centre approval request for ID: " + gymCentreId);
-                    break;
-                }
-            }
-
-        } catch (SQLException e) {
-            // Handle exception or throw a specific exception
-        }
+        } catch (SQLException se) { se.printStackTrace(); }
+        catch (Exception e) { e.printStackTrace(); }
     }
 
     public List<GymCentre> getGymCentreListByCity(String city) {
         List<GymCentre> allCentreByCity = new ArrayList<>();
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_GYM_CENTRES_BY_CITY)) {
-
-            preparedStatement.setString(1, city);
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                while (resultSet.next()) {
-                    String gymCentreId = resultSet.getString("gymCentreID");
-                    String ownerId = resultSet.getString("ownerID");
-                    String centreName = resultSet.getString("gymCenterName");
-                    int approved = resultSet.getInt("approved");
-
-                    GymCentre gymCentre = new GymCentre(gymCentreId, ownerId, centreName, city, approved);
-                    allCentreByCity.add(gymCentre);
-                }
+        try {
+            conn = DBConnection.connect();
+            System.out.println("Fetching gyms centres by City..");
+            statement = conn.prepareStatement(SQLConstants.FETCH_GYM_CENTRES_BY_CITY);
+            statement.setString(1, city);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()) {
+                GymCentre gymCentre = new GymCentre(
+                        rs.getString("centreId"),
+                        rs.getString("ownerId"),
+                        rs.getString("centreName"),
+                        rs.getString("gstin"),
+                        rs.getString("city"),
+                        rs.getInt("capacity"),
+                        rs.getInt("price")
+                );
+                allCentreByCity.add(gymCentre);
             }
-
-        } catch (SQLException e) {
-            // Handle exception or throw a specific exception
+            //System.out.println("The gym centre has been approved!");
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
         }
+//        for(GymCentre gymCentre: gymCentreList){
+//            if(gymCentre.getCity().equals(city)){
+//                allCentreByCity.add(gymCentre);
+//            }
+//        }
         return allCentreByCity;
-    }
-
-    private String generateUniqueGymCentreId(String centreName) {
-        // Implement logic to generate a unique gym centre ID based on your requirements
-        return centreName + System.currentTimeMillis();
     }
 }

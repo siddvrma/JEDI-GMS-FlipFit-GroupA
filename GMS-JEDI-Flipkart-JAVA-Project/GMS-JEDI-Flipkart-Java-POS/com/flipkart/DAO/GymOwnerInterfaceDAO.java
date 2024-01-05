@@ -5,11 +5,13 @@ import com.flipkart.bean.GymOwner;
 import java.util.List;
 
 public interface GymOwnerInterfaceDAO {
-    List<GymOwner> getGymOwnerList();
-    void setGymOwnerList(List<GymOwner> gymOwnerList);
-    void registerGymOwner(GymOwner gymOwner);
-    List<GymOwner> getPendingGymOwnerList();
-    void sendOwnerApprovalRequest(String gymOwnerId);
-    void setPendingGymOwnerList();
-    void validateGymOwner(String gymOwnerId, int isApproved);
+
+    public List<GymOwner> getGymOwnerList();
+    public void setGymOwnerList(List<GymOwner> gymOwnerList);
+    public void registerGymOwner(GymOwner gymOwner);
+    public List<GymOwner> getPendingGymOwnerList();
+    public void sendOwnerApprovalRequest(String gymOwnerId);
+    public void setPendingGymOwnerList();
+    public void validateGymOwner(String gymOwnerId, int isApproved);
+
 }

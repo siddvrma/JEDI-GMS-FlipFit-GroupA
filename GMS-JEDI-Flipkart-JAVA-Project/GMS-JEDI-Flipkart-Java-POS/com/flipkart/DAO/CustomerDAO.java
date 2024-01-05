@@ -1,94 +1,82 @@
 package com.flipkart.DAO;
 
-import com.flipkart.DAO.CustomerInterfaceDAO;
 import com.flipkart.bean.Customer;
-import com.flipkart.connection.DBConnection;
 import com.flipkart.exceptions.RegistrationFailedException;
 import com.flipkart.exceptions.UserInvalidException;
+import com.flipkart.utils.DBConnection;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static com.flipkart.constant.SQLConstants.*;
 
 public class CustomerDAO implements CustomerInterfaceDAO {
-    private static final String INSERT_CUSTOMER = "INSERT INTO Customer (userID, userName, password, email, phoneNumber, cardNumber) VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_CUSTOMER_BY_USERNAME = "SELECT * FROM Customer WHERE userName = ?";
-    private static final String SELECT_CUSTOMER_BY_ID = "SELECT * FROM Customer WHERE userID = ?";
-
-    private static List<Customer> allCustomers = new ArrayList<>();
 
     public void registerCustomer(String userName, String password, String email, String phoneNumber, String cardNumber) throws RegistrationFailedException {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER)) {
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(ADD_NEW_CUSTOMER);
+            stmt.setString(1, userName);
+            stmt.setString(2, userName);
+            stmt.setString(3, password);
+            stmt.setString(4, email);
+            stmt.setString(5, phoneNumber);
+            stmt.setString(6, cardNumber);
 
-            // Assuming you have a method to generate a unique customer ID
-            String customerId = generateUniqueCustomerId(userName);
-
-            preparedStatement.setString(1, customerId);
-            preparedStatement.setString(2, userName);
-            preparedStatement.setString(3, password);
-            preparedStatement.setString(4, email);
-            preparedStatement.setString(5, phoneNumber);
-            preparedStatement.setString(6, cardNumber);
-
-            preparedStatement.executeUpdate();
-
-            // Create a Customer object
-            Customer customer = new Customer(customerId, userName, password, email, phoneNumber, cardNumber);
-
-            // Add the Customer object to the list
-            allCustomers.add(customer);
-
-        } catch (SQLException e) {
+            stmt.executeUpdate();
+            //stmt.close();
+        } catch (SQLException exp) {
             throw new RegistrationFailedException("Failed to register the user. Try again.");
+        } catch (Exception e) {
+            System.out.println("Oops! An error occurred. Try again later.");
         }
     }
 
     public boolean isUserValid(String userName, String password) throws UserInvalidException {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_BY_USERNAME)) {
-
-            preparedStatement.setString(1, userName);
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    String storedPassword = resultSet.getString("password");
-                    return storedPassword.equals(password);
-                }
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(CUSTOMER_LOGIN_QUERY);
+            stmt.setString(1, userName);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                //stmt.close();
+                return true;
             }
-
-        } catch (SQLException e) {
+            //stmt.close();
+        } catch (SQLException exp) {
             throw new UserInvalidException("User is Invalid. Try again.");
+        } catch (Exception exp) {
+            System.out.println("Oops! An error occurred. Try again later.");
         }
         return false;
     }
 
     public Customer getCustomerById(String userName) {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_BY_ID)) {
+        Customer customer = new Customer();
+        try {
+            Connection conn = DBConnection.connect();
+            PreparedStatement stmt = conn.prepareStatement(GET_CUSTOMER_BY_ID);
+            stmt.setString(1, userName);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            customer.setEmail(rs.getString("email"));
+            customer.setUserID(rs.getString("Id"));
+            customer.setPassword(rs.getString("password"));
+            customer.setUserName(rs.getString("name"));
+            customer.setCustomerPhone(rs.getString("phone"));
+            customer.setCardDetails(rs.getString("cardDetails"));
 
-            preparedStatement.setString(1, userName);
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    String customerId = resultSet.getString("userID");
-                    String password = resultSet.getString("password");
-                    String email = resultSet.getString("email");
-                    String phoneNumber = resultSet.getString("phoneNumber");
-                    String cardNumber = resultSet.getString("cardNumber");
-
-                    return new Customer(customerId, userName, password, email, phoneNumber, cardNumber);
-                }
-            }
-
-        } catch (SQLException e) {
-            // Handle exception or throw a specific exception
+            //stmt.close();
+        } catch (SQLException exp) {
+            exp.printStackTrace();
+        } catch (Exception exp) {
+            exp.printStackTrace();
         }
-        return null;
+
+        return customer;
     }
 
-    private String generateUniqueCustomerId(String userName) {
-        // Implement logic to generate a unique customer ID based on your requirements
-        return userName + System.currentTimeMillis();
-    }
 }

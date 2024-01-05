@@ -9,8 +9,8 @@ public interface GymCentreInterfaceDAO {
     List<GymCentre> getAllCentresByOwmerId(String gymOwnerId);
     GymCentre getGymCentreByCentreId(String gymCentreId);
     void addGymCentre(GymCentre centre);
-    List<GymCentre> getPendingGymCentreList();
-    void validateGymCentre(String gymCentreId, int isApproved);
-    void sendCentreApprovalRequest(String gymCentreId);
-    List<GymCentre> getGymCentreListByCity(String city);
+    public List<GymCentre> getPendingGymCentreList();
+    public void validateGymCentre(String gymCentreId, int isApproved);
+    public void sendCentreApprovalRequest(String gymCentreId);
+    public List<GymCentre> getGymCentreListByCity(String city);
 }

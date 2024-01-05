@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.util.List;
 
 public interface ScheduleInterfaceDAO {
-    void addSchedule(Schedule schedule);
-    List<Schedule> getAllScheduleByDate(Date date);
+    public void addSchedule(Schedule schedule);
+    public List<Schedule> getAllScheduleByDate(Date date);
+
 }

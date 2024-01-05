@@ -1,8 +1,6 @@
 package com.flipkart.client;
 import com.flipkart.bean.Role;
-import com.flipkart.connection.DBConnection;
-import java.sql.Connection;
-import java.sql.SQLException;
+
 import java.util.Scanner;
 
 import static com.flipkart.constant.Constants.*;
