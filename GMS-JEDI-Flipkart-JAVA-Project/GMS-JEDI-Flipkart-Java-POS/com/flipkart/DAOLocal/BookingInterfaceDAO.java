@@ -1,4 +1,4 @@
-package com.flipkart.DAO2;
+package com.flipkart.DAOLocal;
 
 import com.flipkart.bean.Booking;
 
