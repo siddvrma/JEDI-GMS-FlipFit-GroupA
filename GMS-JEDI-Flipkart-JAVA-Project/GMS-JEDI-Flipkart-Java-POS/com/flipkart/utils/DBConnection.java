@@ -42,10 +42,10 @@ public class DBConnection {
                 Properties prop = new Properties();
                 InputStream inputStream = DBConnection.class.getClassLoader().getResourceAsStream("./config.properties");
                 prop.load(inputStream);
-                String driver = prop.getProperty("driver");
-                String url = prop.getProperty("url");
-                String user = prop.getProperty("user");
-                String password = prop.getProperty("password");
+                String driver = prop.getProperty("dbdriver");
+                String url = prop.getProperty("dburl");
+                String user = prop.getProperty("dbuser");
+                String password = prop.getProperty("dbpassword");
                 Class.forName(driver);
                 connection = DriverManager.getConnection(url, user, password);
 
