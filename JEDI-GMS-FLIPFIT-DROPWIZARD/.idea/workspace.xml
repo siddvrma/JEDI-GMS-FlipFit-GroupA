@@ -5,75 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee05e2db-b783-42b5-8d4b-3e307faa26b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/AdminDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/AdminInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/BookingDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/BookingInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/CustomerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/CustomerInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/GymCentreDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/GymCentreInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/GymOwnerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/GymOwnerInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/ScheduleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/ScheduleInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/SlotDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/DAO/SlotInterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/ApprovalRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/GymCentre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/GymOwner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Slot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/AdminServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/BookingServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/CustomerServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/GymCentreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/GymCentreServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/GymOwnerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/GymOwnerServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/ScheduleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/ScheduleServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/SlotService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/business/SlotServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/client/AdminClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/client/CustomerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/client/GymOwnerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/client/MainApplicationClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/constant/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/constant/SQLConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controller/FlipFitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controller/GymOwnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/BookingFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/CentreNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/DataEntryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/GymOwnerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/InvalidChoiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/LoginFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/RegistrationFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/UserInvalidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/exceptions/WrongCredentialsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/utils/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/utils/InputSlot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/utils/UserPlan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/utils/addSlotDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/utils/util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/validators/Validators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/FlipFitAppMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/FlipFitAppMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/controllers/FlipFitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/bean/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +40,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dropwizard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD",
     "onboarding.tips.debug.path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD/src/main/java/org/example/Main.java",
