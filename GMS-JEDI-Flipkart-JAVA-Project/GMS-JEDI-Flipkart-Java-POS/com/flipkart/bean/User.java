@@ -49,6 +49,14 @@ public class User {
     }
 
     /**
+     * Default Constructor for User
+     *
+     */
+    public User() {
+
+    }
+
+    /**
      * Gets the role of the user.
      *
      * @return The role of the user.
