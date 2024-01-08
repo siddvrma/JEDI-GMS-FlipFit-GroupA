@@ -65,7 +65,7 @@ public class GymOwnerClient {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = currentTime.format(myFormat);
-        System.out.println(YELLOW_COLOR+"WELCOME "+gymOwnerId+" !!\nWhat you what to do\nLogin TIME: "+currentTime+RESET_COLOR);
+        System.out.println(YELLOW_COLOR+"WELCOME "+gymOwnerId+" !!        "+formattedDate+"\nWhat do you want to do"+RESET_COLOR);
         while(true){
             System.out.println("" +
                     "0. View all my Gym Centres\n" +

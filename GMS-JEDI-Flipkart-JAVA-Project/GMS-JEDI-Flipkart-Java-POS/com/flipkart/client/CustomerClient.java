@@ -29,7 +29,11 @@ public class CustomerClient {
     public boolean customerLogin(String userName, String password) {
 //        Check if credentials are right
         if (customerService.isUserValid(userName, password)) {
-            System.out.println(GREEN_COLOR+"Successfully logged in"+RESET_COLOR);
+            LocalDateTime currentTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String formattedDateTime = currentTime.format(formatter);
+
+            System.out.println(GREEN_COLOR + "Successfully logged in at " + formattedDateTime + RESET_COLOR);
             customerClientMainPage(userName);
         } else {
             System.out.println(RED_COLOR+"UserName or password doesn't match"+RESET_COLOR);
@@ -202,7 +206,7 @@ public class CustomerClient {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = currentTime.format(myFormat);
-        System.out.println(YELLOW_COLOR+"WELCOME "+userName+" !!\nWhat you what to do\nLogin TIME: "+currentTime+RESET_COLOR);
+        System.out.println(YELLOW_COLOR+"\nWELCOME "+userName+" !!        "+formattedDate+"\nWhat do you want to do"+RESET_COLOR);
         while(true){
             System.out.println("1. View My Profile \n2. Book a slot in a Gym \n3. View Bookings\n4. Cancel Bookings\n5. Go Back to previous menu");
             int choice = scanner.nextInt();
