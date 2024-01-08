@@ -23,12 +23,11 @@ public class SlotService implements SlotServiceInterface {
         return slotDAO.getSlotList();
     }
 
-    public void addSlotsForGym(String gymCentreId, List<Slot> slotList){
+    public void addSlotsForGym(String gymCentreId, List<Slot> slotList) {
         System.out.println("Adding all slots to gym: " + gymCentreId);
-        for(Slot slot : slotList) {
-            slot.setCentreID(gymCentreId);
-            slotDAO.addSlot(slot);
-        }
+        slotList.stream()
+                .peek(slot -> slot.setCentreID(gymCentreId))
+                .forEach(slotDAO::addSlot);
     }
 
     public boolean isSlotValid(String slotID,String centreId){

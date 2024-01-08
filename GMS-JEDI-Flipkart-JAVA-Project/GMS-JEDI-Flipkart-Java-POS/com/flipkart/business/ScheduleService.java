@@ -3,6 +3,7 @@ package com.flipkart.business;
 import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.flipkart.DAO.ScheduleDAO;
 import com.flipkart.bean.Schedule;
@@ -23,17 +24,14 @@ public class ScheduleService implements ScheduleServiceInterface {
         return schedule;
     }
 
-    public Schedule getScheduleByDateAndSlotId(String SlotId, Date date){
-        //returns whether current schedule exists or not
+    public Schedule getScheduleByDateAndSlotId(String SlotId, Date date) {
         List<Schedule> scheduleList = scheduleDAO.getAllScheduleByDate(date);
-        for(Schedule schedule: scheduleList){
-            if(schedule.getSlotID().equals(SlotId))
-                return schedule;
-        }
-
-        //Schedule doesn't exist, return null
-        return null;
+        return scheduleList.stream()
+                .filter(schedule -> schedule.getSlotID().equals(SlotId))
+                .findFirst()
+                .orElse(null);
     }
+
 
     public boolean modifySchedule(String scheduleId,int action){
         // increment or decrement availability based on action
@@ -41,33 +39,24 @@ public class ScheduleService implements ScheduleServiceInterface {
         return scheduleDAO.modifySchedule(scheduleId, action);
     }
 
-    public List<Schedule> checkAvailability(String centreID, Date date){
+    public List<Schedule> checkAvailability(String centreID, Date date) {
         List<Slot> allSlotsForGym = slotService.getAllSlotsByCentre(centreID);
-        List<Schedule> allAvailableSchedules = new ArrayList<>();
-        for(Slot slot : allSlotsForGym){
-            String slotId = slot.getSlotId();
-            Schedule schedule = getOrCreateSchedule(slotId, date);
-            if(schedule.getAvailability() > 0)
-                allAvailableSchedules.add(schedule);
-        }
-
-        return allAvailableSchedules;
+        return allSlotsForGym.stream()
+                .map(slot -> getOrCreateSchedule(slot.getSlotId(), date))
+                .filter(schedule -> schedule.getAvailability() > 0)
+                .collect(Collectors.toList());
     }
+
 
     public List<Slot> getAllAvailableSlotsByDate(String centreID, Date date) {
         List<Slot> allSlotsOfThatCentre = slotService.getAllSlotsByCentre(centreID);
-        List<Slot> response = slotService.getAllSlotsByCentre(centreID);
-        for(Slot slot: allSlotsOfThatCentre){
-            for(Schedule schedule: scheduleDAO.getAllScheduleByDate(date)){
-                if (slotService.getSlotByID(schedule.getSlotID()).getCentreID().equals(centreID)){
-                    if(schedule.getAvailability() <= 0){
-                        response.remove(slot);
-                    }
-                }
-            }
-        }
-        return response;
+        return allSlotsOfThatCentre.stream()
+                .filter(slot -> scheduleDAO.getAllScheduleByDate(date).stream()
+                        .anyMatch(schedule -> slotService.getSlotByID(schedule.getSlotID()).getCentreID().equals(centreID)
+                                && schedule.getAvailability() > 0))
+                .collect(Collectors.toList());
     }
+
 
     public Schedule getSchedule(String scheduleID){
         return scheduleDAO.getSchedule(scheduleID);

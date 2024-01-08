@@ -8,6 +8,8 @@ public class Constants {
     public static String DASHED_LINE = GREEN_COLOR +"------------------------------------------------------------------------" + RESET_COLOR;
     public static String INVALID_CHOICE_ERROR = RED_COLOR +  "\nPlease enter valid choice\n" + RESET_COLOR;
     public static String EXIT_MESSAGE = RED_COLOR + "\nEXITING THE APPLICATION\n" + RESET_COLOR;
+
+    public static String PRINT_EXIT = RED_COLOR + "\nExit\n" + RESET_COLOR;
     public static String PREVIOUS_MENU_MESSAGE = "\nGOING BACK TO PREVIOUS MENU\n";
     public static String WELCOME_MESSAGE = GREEN_COLOR + "\nWELCOME TO THE GMS APPLICATION\n" + RESET_COLOR;
     public static String APPROVAL_GYM_CENTRE_CONFIRMATION =GREEN_COLOR + "\nAdmin Approved the Gym Centre\n"+ RESET_COLOR;
