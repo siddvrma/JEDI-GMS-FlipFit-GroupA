@@ -80,7 +80,7 @@ public class GymOwnerClient {
                 /* Take input from user for all service parameters ( Make the menu ) */
 
                 case 0:
-                    List<GymCentre> allGymCentres = gymCentreService.getAllCentresByOwmerId(gymOwnerId);
+                    List<GymCentre> allGymCentres = gymCentreService.getAllCentresByOwnerId(gymOwnerId);
                     util.printGymCentres(allGymCentres);
                     break;
 

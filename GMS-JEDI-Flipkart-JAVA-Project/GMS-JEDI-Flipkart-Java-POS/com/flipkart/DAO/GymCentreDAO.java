@@ -21,7 +21,7 @@ public class GymCentreDAO implements GymCentreInterfaceDAO {
     }
 
     // api call to retrieve all gym centres and status
-    public List<GymCentre> getAllCentresByOwmerId(String gymOwnerId)  {
+    public List<GymCentre> getAllCentresByOwnerId(String gymOwnerId)  {
 
         List<GymCentre> allGymCentres = new ArrayList<>();
         try {

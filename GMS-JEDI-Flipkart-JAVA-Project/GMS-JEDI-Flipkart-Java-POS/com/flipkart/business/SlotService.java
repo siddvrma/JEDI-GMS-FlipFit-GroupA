@@ -15,8 +15,8 @@ public class SlotService implements SlotServiceInterface {
         return slotDAO.getSlotById(slotID);
     }
 
-    public Slot getSlotByIDandCentreId(String slotID,String centreId){
-        return slotDAO.getSlotByIdandCentreId(slotID,centreId);
+    public Slot getSlotByIDAndCentreId(String slotID, String centreId){
+        return slotDAO.getSlotByIdAndCentreId(slotID,centreId);
     }
 
     public List<Slot> getSlotList(){
@@ -32,6 +32,6 @@ public class SlotService implements SlotServiceInterface {
     }
 
     public boolean isSlotValid(String slotID,String centreId){
-        return getSlotByIDandCentreId(slotID,centreId) != null;
+        return getSlotByIDAndCentreId(slotID,centreId) != null;
     }
 }

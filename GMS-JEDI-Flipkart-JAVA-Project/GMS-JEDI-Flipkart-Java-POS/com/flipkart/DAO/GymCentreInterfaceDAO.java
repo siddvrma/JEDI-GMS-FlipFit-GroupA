@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GymCentreInterfaceDAO {
 
-    List<GymCentre> getAllCentresByOwmerId(String gymOwnerId);
+    List<GymCentre> getAllCentresByOwnerId(String gymOwnerId);
     GymCentre getGymCentreByCentreId(String gymCentreId);
     void addGymCentre(GymCentre centre);
     public List<GymCentre> getPendingGymCentreList();

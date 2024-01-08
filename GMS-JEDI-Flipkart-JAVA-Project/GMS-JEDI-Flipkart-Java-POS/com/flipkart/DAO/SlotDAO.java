@@ -90,7 +90,7 @@ public class SlotDAO implements SlotInterfaceDAO {
         return slot;
     }
 
-    public Slot getSlotByIdandCentreId(String slotID,String centreID) {
+    public Slot getSlotByIdAndCentreId(String slotID,String centreID) {
         Slot slot = null;
         try{
             Connection conn = DBConnection.connect();

@@ -43,7 +43,7 @@ public class SlotDAO implements SlotInterfaceDAO {
         return null;
     }
 
-    public Slot getSlotByIdandCentreId(String slotID, String centreID) {
+    public Slot getSlotByIdAndCentreId(String slotID, String centreID) {
         for (Slot slot : slotList) {
             if (slot.getSlotId().equals(slotID) && slot.getCentreID().equals(centreID)) {
                 return slot;
