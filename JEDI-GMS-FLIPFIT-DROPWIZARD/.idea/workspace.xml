@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ee05e2db-b783-42b5-8d4b-3e307faa26b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/FlipFitAppMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/config/FlipFitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controllers/FlipFitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymCentre.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymCentre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymOwner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymOwner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Slot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/User.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2agKIapAdx2LJRW37h1TXub7Y7z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FlipFitAppMenu.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD",
+    "onboarding.tips.debug.path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FlipFitAppMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.flipkart.FlipFitAppMenu" />
+      <module name="JEDI-GMS-FLIPFIT-DROPWIZARD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.flipkart.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FlipFitAppMenu" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee05e2db-b783-42b5-8d4b-3e307faa26b7" name="Changes" comment="" />
+      <created>1704734702820</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704734702820</updated>
+    </task>
+    <servers />
+  </component>
+</project>
