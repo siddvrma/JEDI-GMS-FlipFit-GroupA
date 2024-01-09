@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee05e2db-b783-42b5-8d4b-3e307faa26b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/FlipFitAppMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/config/FlipFitConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/flipkart/controllers/FlipFitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymCentre.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymCentre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymOwner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/GymOwner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Schedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/Slot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/out/production/GMS-JEDI-Flipkart-JAVA-Project/com/flipkart/bean/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/AdminDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/AdminInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/BookingDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/BookingInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/CustomerDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/CustomerInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/GymCentreDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/GymCentreInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/GymOwnerDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/GymOwnerInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/ScheduleDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/ScheduleInterfaceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/SlotDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GMS-JEDI-Flipkart-JAVA-Project/GMS-JEDI-Flipkart-Java-POS/com/flipkart/DAOLocal/SlotInterfaceDAO.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +53,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dropwizard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD",
     "onboarding.tips.debug.path": "/Users/rahul.kumar40/Documents/FlipkartProjects/JEDI-GMS-FlipFit-GroupA/JEDI-GMS-FLIPFIT-DROPWIZARD/src/main/java/org/example/Main.java",
@@ -70,6 +65,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
