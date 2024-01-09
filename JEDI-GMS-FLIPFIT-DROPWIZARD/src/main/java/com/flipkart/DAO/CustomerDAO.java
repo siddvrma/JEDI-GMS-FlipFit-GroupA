@@ -26,6 +26,8 @@ public class CustomerDAO implements CustomerInterfaceDAO {
             stmt.setString(6, customer.getCardDetails());
             stmt.executeUpdate();
             stmt.close();
+
+            return customer;
         } catch (SQLException exp) {
             throw new RegistrationFailedException("Failed to register the user. Try again.");
         } catch (Exception e) {
@@ -68,14 +70,13 @@ public class CustomerDAO implements CustomerInterfaceDAO {
             customer.setUserName(rs.getString("name"));
             customer.setCustomerPhone(rs.getString("phone"));
             customer.setCardDetails(rs.getString("cardDetails"));
-
             stmt.close();
         } catch (SQLException exp) {
             exp.printStackTrace();
         } catch (Exception exp) {
             exp.printStackTrace();
         }
-
+        System.out.println("Rahul-Customer returned"+customer);
         return customer;
     }
 

@@ -45,17 +45,18 @@ public class CustomerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomerProfile(@QueryParam("userName") String userName){
         Customer customerProfile = customerService.viewMyProfile(userName);
+        System.out.println("Rahul-Customer"+customerProfile);
         try{
             return Response.ok(customerProfile).build();
         }catch (Exception exception){
             return Response.status(Response.Status.UNAUTHORIZED).entity(exception.getMessage()).build();
         }
     }
-
     @POST
     @Path("/register")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response customerRegister(Customer customer){
+    public Response customerRegister(@QueryParam("userId") String userId,@QueryParam("userName") String userName,@QueryParam("email") String email,@QueryParam("password") String password,@QueryParam("customerPhone") String customerPhone,@QueryParam("cardDetails") String cardDetails){
+        Customer customer=new Customer(userId,userName,email,password,customerPhone,cardDetails);
         Customer customerProfile = customerService.registerCustomer(customer);
         if(customerProfile == null){
             return Response.notModified().build();
