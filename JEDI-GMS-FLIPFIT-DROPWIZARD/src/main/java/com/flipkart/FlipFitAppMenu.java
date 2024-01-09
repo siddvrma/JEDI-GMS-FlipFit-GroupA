@@ -23,6 +23,7 @@ public class FlipFitAppMenu extends Application<FlipFitConfig> {
 
     @Override
     public void run(FlipFitConfig configuration, Environment environment) {
+        System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
         LOGGER.info("Registering REST resources");
         System.out.println("HERE");
         environment.jersey().register(new AdminController());

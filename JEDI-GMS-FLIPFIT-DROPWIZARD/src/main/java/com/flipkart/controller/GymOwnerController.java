@@ -28,7 +28,7 @@ public class GymOwnerController {
 
 
     @GET
-    @Path("all")
+    @Path("view-all")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCentresByOwnerId() {
         return Response.ok(gymOwnerService.viewAllGymOwners()).build();
@@ -63,9 +63,6 @@ public class GymOwnerController {
     @Path("/add-centre")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addGymCentre(GymCentre gymCentre) {
-//            gymCentre.setOwnerID(gymCentre.getOwnerID());
-//        System.out.println(gymOwnerId);
-//        System.out.println(gymCentre);
         GymCentre newGymCentre = gymCentreService.addCenter(gymCentre);
         if(newGymCentre==null)
             return Response.notModified().build();

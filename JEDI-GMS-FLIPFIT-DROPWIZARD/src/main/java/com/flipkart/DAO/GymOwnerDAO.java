@@ -126,6 +126,7 @@ public class GymOwnerDAO implements GymOwnerInterfaceDAO {
         }catch(SQLException e){
             System.out.println("Try again with a different Username \n");
         }
+
         return null;
     }
 
